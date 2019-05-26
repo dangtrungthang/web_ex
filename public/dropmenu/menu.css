@@ -1,0 +1,107 @@
+.menu {
+	text-transform:uppercase;
+	font-family:arial;
+	font-size:12px;
+}
+.menu ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.menu ul li {
+	position: relative;
+	display: inline;
+	float: left;padding: 10px 8px 10px 8px;
+}
+.menu ul li.last{width:190px;}
+/*.menu ul li a:hover, .menu ul li a.active, .menu ul li a.selected {
+	background: #FDFCFC !important;
+border-radius: 25px;
+color: #1987c2;
+border: 1px solid #E2E0E0;
+}*/
+.menu>ul>li>a:hover{background: url(/images/con1.png) !important;
+border-radius: 25px;
+color: #fff;}
+ .menu ul li a.active, .menu ul li a.selected {
+	background: url(/images/con1.png) !important;
+border-radius: 25px;
+color: #fff;
+
+}
+.menu ul li a.dai:hover, .menu ul li a.dai.active, .menu ul li a.dai.selected {
+	background: url(/images/con2.png) !important;
+
+color: #fff;
+
+}
+.menu ul li a.dai2:hover, .menu ul li a.dai2.active, .menu ul li a.dai2.selected {
+	background: url(/images/con3.png) !important;
+
+color: #fff;
+
+}
+.menu ul li a{
+	display: block;
+	padding:5px 12px;
+	color: #949698;
+	text-decoration: none;
+	font-size:16px;
+}
+.menu ul li > ul li a{font-size:12px }
+.menu ul li.line {height:50px; width:1px; background:url(../images/line1.png);}
+div.menu ul li ul{
+filter:alpha(opacity=90);
+opacity: 0.9;
+-moz-opacity:0.9;
+position: absolute;
+padding:0;
+margin:0 0 0 0px;
+left:0;
+display: none; /*collapse all sub menus to begin with*/
+visibility: hidden;
+width: 240px;
+text-align:left;
+background:#ed7127; /*#dd2841;*/
+font-size:12px;
+}
+
+div.menu ul li ul li{
+display:list-item;
+float: none;
+border:none;
+text-align:left;
+margin:0;
+padding:0;
+/*border-top:solid #c71c34 1px;*/
+border-top:solid #d1d1d2 1px;
+}
+div.menu ul li ul li:hover{
+	padding:0px;
+	margin:0;
+}
+div.menu ul li ul li a{
+width: 210px; /*width of sub menus*/
+padding: 8px 15px;
+margin: 0;
+text-align:left;
+text-transform:none;
+color:#fff;
+font-weight:100;
+display:block;
+}
+
+div.menu ul li ul li ul {
+position: absolute;
+width: 240px;
+}
+div.menu ul li ul li ul li a:hover{
+color:#ffffff;
+}
+div.menu ul li ul li:hover{border-bottom:none }
+div.menu ul li ul li a:hover, div.menu ul li ul li a.selected{
+color:#ffffff;
+/*background:#0081c1;*/
+background:#d64f29 !important;
+}
+
