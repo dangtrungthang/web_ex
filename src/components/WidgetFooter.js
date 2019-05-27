@@ -19,8 +19,8 @@ class WidgetFooter extends Component {
         <div className="part-slider all">
           <ul id="j-cycle-1" className="jcycle">
             <li>
-              <a href="http://www.vaa.org.vn/" target="_blank"><img src="/uploads/images/partners/0.0883270014230447450.958380001422599867w2.png" alt width="143px" height="67px" /></a> 
-              <a href="http://www.haa.vn/" target="_blank"><img src="/uploads/images/partners/0.8209050014230447320.476954001422599895w3.png" alt width="143px" height="67px" /></a> 
+              <a target="_blank"><img src="/images/chutri/0.0883270014230447450.958380001422599867w2.png" alt width="143px" height="67px" /></a> 
+              <a target="_blank"><img src="/images/chutri/0.8209050014230447320.476954001422599895w3.png" alt width="143px" height="67px" /></a> 
             </li>
           </ul>
         </div>
@@ -32,9 +32,9 @@ class WidgetFooter extends Component {
         <div className="part-slider all">
           <ul id="j-cycle-1" className="jcycle">
             <li>
-              <a href="http://http://printpacksign.com/?utm_source=partner&utm_medium=banner&utm_campaign=VietAd_PPS19" target="_blank"><img src="/uploads/images/partners/0.456439001545114127PP+S-2019---156x70.gif" alt width="143px" height="67px" /></a> 
-              <a href="http://http://ipmex.com/" target="_blank"><img src="/uploads/images/partners/0.308962001545113428VIETAD_DONGNAM-156x73.gif" alt width="143px" height="67px" /></a> 
-              <a href="http://dps-world.com/" target="_blank"><img src="/uploads/images/partners/0.295836001545113648DPS-WEB-BANNER-156-x-73.gif" alt width="143px" height="67px" /></a> 
+              <a target="_blank"><img src="/images/nuocngoai/0.456439001545114127PP+S-2019---156x70.gif" alt width="143px" height="67px" /></a> 
+              <a target="_blank"><img src="/images/nuocngoai/0.295836001545113648DPS-WEB-BANNER-156-x-73.gif" alt width="143px" height="67px" /></a> 
+              <a target="_blank"><img src="/images/nuocngoai/0.920677001545113349ISLE156x73.gif" alt width="143px" height="67px" /></a> 
             </li>
            
           </ul>
@@ -47,11 +47,11 @@ class WidgetFooter extends Component {
         <div className="part-slider all">
           <ul id="j-cycle-1" className="jcycle">
             <li>
-              <a href="http://cuongkhanhadv.com.vn/" target="_blank"><img src="/uploads/images/partners/0.234284001422600443w7.png" alt width="143px" height="67px" /></a> 
-              <a href="http://www.daithanh.net.vn/" target="_blank"><img src="/uploads/images/partners/0.426771001422861574w8.png" alt width="143px" height="67px" /></a> 
+              <a target="_blank"><img src="/images/taitro/0.234284001422600443w7.png" alt width="143px" height="67px" /></a> 
+              <a target="_blank"><img src="/images/taitro/0.426771001422861574w8.png" alt width="143px" height="67px" /></a> 
             </li>
             <li>
-              <a href="http://" target="_blank"><img src="/uploads/images/partners/0.688016001437789319yyy-01.jpg" alt width="143px" height="67px" /></a> 
+              <a target="_blank"><img src="/images/taitro/0.688016001437789319yyy-01.jpg" alt width="143px" height="67px" /></a> 
             </li>
           </ul>
         </div>
@@ -63,7 +63,7 @@ class WidgetFooter extends Component {
         <div className="part-slider all">
           <ul id="j-cycle-1" className="jcycle">
             <li>
-              <a href="http://www.aelvn.com" target="_blank"><img src="/uploads/images/partners/0.543054001423045291file_up_web_vỉead-02.png" alt width="143px" height="67px" /></a> 
+              {/* <a href="http://www.aelvn.com" target="_blank"><img src="/uploads/images/partners/0.543054001423045291file_up_web_vỉead-02.png" alt width="143px" height="67px" /></a>  */}
             </li>
           </ul>
         </div>
