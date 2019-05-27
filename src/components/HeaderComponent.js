@@ -6,12 +6,12 @@ class HeaderComponent extends Component {
             <div className="header wrapper">
                 <div className="lefthead logo"><h1><a href="/"><img src="/images/vietad2019.png" alt="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" title="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" height="200px" /></a>{/* <br /><a href="/"><img src="/images/logo-vpse.png" alt="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" title="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" style="margin:0 0 15px 10px; height:140px;"></a></h1> */}</h1></div>
                 <div className="righthead ">
-                    <div className="flag">
+                    {/* <div className="flag">
                         <a href="/vn/"><img src="/images/viet.png" alt title /></a>
                         <a href="/en/"><img src="/images/anh.png" alt title /></a>
-                        <a href="/cn/"><img src="/images/trung.png" alt title /></a>
+                        <a href="/cn/"><img src="/images/trung.png" alt title /></a> */}
                         {/*<a href="/kr/"><img src="/images/han.png" alt="" title="" ></a>*/}
-                    </div>
+                    {/* </div> */}
                     <div className="search">
                         <form method="get" action="/" id="searchbox">
                             <input type="hidden" name="module" defaultValue="tim-kiem" />
