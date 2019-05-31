@@ -9,20 +9,18 @@ import Home from './client/pages/Home';
 import Album from './components/Album';
 import WidgetFooter from './components/WidgetFooter';
 import About from './client/pages/About';
+import { Main } from './routers/clientRouters';
+import { BrowserRouter } from 'react-router-dom'
+import NuocNgoai from './client/pages/NuocNgoai';
 function App() {
   return (
-   <div>
-     <HeaderComponent/>
-     <NavComponent/>
-     <div className="main wrapper">
-     <Slide/>
-      <Home/>
-      {/* <About/> */}
-      {/* <Album/> */}
-     </div>
-     <WidgetFooter/>
-   <FooterComponent/>
-   </div>
+    <BrowserRouter>
+      <HeaderComponent />
+      <NavComponent />
+      <Main />
+      <WidgetFooter />
+      <FooterComponent />
+    </BrowserRouter>
   );
 }
 

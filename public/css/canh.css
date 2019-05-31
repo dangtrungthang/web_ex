@@ -141,7 +141,7 @@ div.itemContainer {float: left;}
 .moduleItemImage, .itemImageBlock, .catItemImageBlock, .userItemImageBlock { float: left;margin-bottom: 20px;margin-right: 20px;}
 .itemImageBlock a, .catItemImageBlock a, .userItemImageBlock a { display: block;}
 .moduleItemImage img, .itemImageBlock img, .catItemImageBlock img, .userItemImageBlock img {border: 5px solid #FFFFFF;box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);}
-.catItemTitle{font-family: Arial,Helvetica,sans-serif;font-size: 12px;padding: 0;}
+.catItemTitle{font-family: Arial,Helvetica,sans-serif;font-size: 20px;padding: 0;}
 .catItemTitle a:hover{text-decoration:none;color:#E9B42A}
 .catItemTitle a{color:#ED7127}
 .pages .page{float:left}

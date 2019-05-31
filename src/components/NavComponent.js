@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link } from "react-router-dom";
 class NavComponent extends Component {
   render() {
     return (
@@ -7,9 +7,9 @@ class NavComponent extends Component {
         <div className="nav wrapper">
           <div className="menu" id="mainmenu">
             <ul className="menuc">
-              <li className="active"><a href="/">Trang chủ</a></li>
+              <li className="active"><Link to="/">Trang chủ</Link></li>
               <li className="gach"><a /></li>
-              <li className style={{ zIndex: 100 }}><a href="/vn/gioi-thieu" style={{ paddingRight: 15 }}>Giới thiệu</a>
+              <li className style={{ zIndex: 100 }}><Link to="/gioi-thieu" style={{ paddingRight: 15 }}>Giới thiệu</Link>
               </li>
               <li className="gach"><a /></li>
               {/*<li class= ""><a href="/vn/forexhibitors">FOREXHIBITORS</a>
@@ -35,36 +35,26 @@ class NavComponent extends Component {
                   </ul>
 				
 				</li>*/}
-              <li className style={{ zIndex: 99 }}><a href="/vn/tham-gia-trien-lam/brochure/1" style={{ paddingRight: 15 }} className>Tham gia triễn lãm</a>
+              <li className style={{ zIndex: 99 }}><a href="/trien-lam" style={{ paddingRight: 15 }} className>Danh sách triễn lãm</a>
                 <ul className="sub-menu" style={{ top: 53, visibility: 'visible', display: 'none', left: 0, width: 240 }}>
-                  <li><a href="/vn/tham-gia-trien-lam/brochure/1">Brochure</a></li>
-                  <li><a href="/vn/tham-gia-trien-lam/so-do/2">Sơ đồ</a></li>
-                  <li><a href="/vn/tham-gia-trien-lam/quy-dinh-tham-gia/4">Quy định Tham gia</a></li>
-                  <li><a href="/vn/tham-gia-trien-lam/bao-cao-trien-lam/5">Báo cáo Triển lãm</a></li>
-                  <li className><a href="/vn/dang-ky-gian-hang-online">Đăng ký Gian hàng Online</a></li>
-                  <li className><a href="/vn/doanh-nghiep-tham-gia">Doanh nghiệp tham gia</a></li>
-                  <li className><a href="/vn/dich-vu">Dịch vụ</a></li>
+                  <li><Link to="/trien-lam" >Trong nước</Link></li>
+                  <li><Link to="/trien-lam/nuoc-ngoai" >Nước ngoài</Link></li>
+                  
                 </ul>
               </li>
               <li className="gach"><a /></li>
-              <li className style={{ zIndex: 98 }}><a href="/vn/tham-quan-trien-lam" style={{ paddingRight: 15 }} className>THAM QUAN TRIỂN LÃM</a>
-                <ul className="sub-menu" style={{ top: 53, visibility: 'visible', display: 'none', left: 0, width: 240 }}>
-                  <li><a href="/vn/tham-quan-trien-lam/dia-diem-to-chuc/21">Địa điểm tổ chức</a></li>
-                  <li><a href="/vn/tham-quan-trien-lam/thoi-gian-mo-cua-trien-lam/22">Thời gian mở cửa Triển lãm</a></li>
-                  <li className><a href="/vn/dang-ki-tham-quan-online">Đăng kí tham quan online</a></li>
-                  <li className><a href="/vn/dich-vu-">Dịch vụ </a></li>
-                </ul>
+              <li className style={{ zIndex: 98 }}><a href="/vn/tham-quan-trien-lam" style={{ paddingRight: 15 }} className>Lịch triễn lãm</a>
+                
               </li>
               <li className="gach"><a /></li>
-              <li className style={{ zIndex: 97 }}><a href="/vn/bao-chi" style={{ paddingRight: 15 }}>Truyền Thông</a>
+              <li className style={{ zIndex: 97 }}><a href="/dich-vu" style={{ paddingRight: 15 }}>Sản phẩm & dịch vụ</a>
                 <ul className="sub-menu" style={{ top: 53, display: 'none', visibility: 'visible' }}>
-                  <li className><a href="/vn/bao-chi">Báo chí</a></li>
-                  <li className><a href="/vn/hinh-anh">Hình ảnh</a></li>
-                  <li className><a href="/vn/video">Video</a></li>
+                  <li className><a href="/dich-vu/in-the">Dịch vụ in thẻ</a></li>
+                  
                 </ul>
               </li>
               <li className="gach"><a /></li>
-              <li className><a href="/vn/lien-he">Liên hệ</a></li>
+              <li className><a href="/lien-he">Liên hệ</a></li>
               <div className="clear" />
             </ul>
             <div className="clear" />
