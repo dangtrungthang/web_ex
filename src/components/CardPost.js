@@ -18,7 +18,7 @@ class CardPost extends Component {
                                 </span>
                             </div>
                             <h3 className="catItemTitle"><a>
-                               <Link to={`/trien-lam/nuoc-ngoai/${this.props.paramLink.id}`}> {this.props.title}</Link>
+                               <Link to={`/trien-lam/nuoc-ngoai/${this.props.paramLink.id}/thong-tin`}> {this.props.title}</Link>
 
                             </a></h3>
                             <a style={{color:'black',opacity:0.5}}>
