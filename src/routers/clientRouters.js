@@ -7,15 +7,29 @@ import NuocNgoai from "../client/pages/NuocNgoai";
 import Content from "../client/pages/Content";
 import Contact from "../client/pages/Contact";
 import Dichvu from "../client/pages/Dichvu";
+import NavComponent from '../components/NavComponent';
+import HeaderComponent from '../components/HeaderComponent';
+import FooterComponent from '../components/FooterComponent';
+import WidgetFooter from '../components/WidgetFooter';
+
+
  export const Main=()=>(
     <main>
+        <BrowserRouter>
+        <HeaderComponent />
+        <NavComponent />
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/gioi-thieu" component={About}/>
             <Route path="/trien-lam" component={Trienlam}/>
             <Route path="/lien-he" component={Contact}/>
             <Route path="/dich-vu" component={Dichvu}/>
+           
         </Switch>
+        <WidgetFooter />
+        <FooterComponent />
+      </BrowserRouter>
+       
     </main>
  )
 const Trienlam=()=>(

@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
 import { fetchPosts } from "../../databases/logicCode"
 import CardPost from '../../components/CardPost';
+import { Link } from "react-router-dom";
+
+const menu={
+    hcm:false,
+    hanoi:false,
+    khac:false
+}
 class TrongNuoc extends Component {constructor(props) {
   super(props);
   this.state={
       "posts":[
       "1","2"
       ],
+      ...menu,
+      hcm:true
   }
 }
 
+toggleMenu=(event,type)=>{
+    event.stopPropagation();
+
+    this.setState({
+      ...menu,
+      [type]: true
+    });
+}
 componentDidMount() {
 
   fetchPosts().then((posts)=>{
@@ -19,30 +36,46 @@ componentDidMount() {
   });
 }
 renderPosts(){
-  const {posts}=this.state;
-  return posts.map((val,index)=>(
+  const {posts,hcm,hanoi,khac}=this.state;
+  const data=posts.filter((val)=>{
+      if(hcm){
+          return val.noitochuc==='TP Hồ Chí Minh';
+      }if(hanoi){
+          return val.noitochuc==='Hà Nội'
+      }if(khac) {
+        return val.noitochuc!='TP Hồ Chí Minh'&&val.noitochuc!='Hà Nội'
+      }
+  })
+  return data.map((val,index)=>(
       <CardPost key={index}
-      title={val.title}
-      intro={val.intro}
-      image={val.image}
+      title={val.tieude}
+      intro={val.noidung}
+      image={val.logo}
       to={val.to}
       from={val.from}
-      where={val.where}
+      where={val.diadiem}
       paramLink={val}
       />
   ))
 
 }
 render() {
+    const {hcm,hanoi,khac}=this.state;
   return (
       <div className="main wrapper">
       <div className="container">
           <h1 className="title"> Triễn lãm trong nước</h1>
           <div className="mcon">
               <ul>
-                  <li className="active"><a href="/vn/bao-chi"> Tp. Hồ Chí Minh </a></li>
-                  <li><a href="/vn/hinh-anh"> Hà Nội </a></li>
-                  <li className><a href="/vn/video"> Các tỉnh khác </a></li>
+                  <li className={hcm?'active':''}><Link
+                  onClick={event=>this.toggleMenu(event,'hcm')} 
+                  > Tp. Hồ Chí Minh </Link></li>
+                  <li className={hanoi?'active':''}><Link
+                  onClick={event=>this.toggleMenu(event,'hanoi')} 
+                  > Hà Nội </Link></li>
+                  <li className={khac?'active':''}><Link 
+                  onClick={event=>this.toggleMenu(event,'khac')}
+                  > Các tỉnh khác </Link></li>
                 
 
                   <div className="clear" />

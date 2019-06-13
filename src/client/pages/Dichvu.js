@@ -1,15 +1,39 @@
 import React, { Component } from 'react';
 
+const menu={
+  gioithieu:false,
+  dangky:false
+}
 class Dichvu extends Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      ...menu,
+      gioithieu:true
+    }
+  }
+  
+  toggleMenu=(event,type)=>{
+    event.stopPropagation();
+
+    this.setState({
+      ...menu,
+      [type]: true
+    });
+  }
     render() {
+      const {gioithieu,dangky}=this.state;
         return (
             <div className="main wrapper">
             <div className="container">
                 <h1 className="title"> Dịch vụ in thẻ</h1>
                 <div className="mcon">
                   <ul>
-                    <li className="active"><a >Giới thiệu</a></li>
-                    <li className><a href="/vn/gioi-thieu/muc-tieu-cua-vietad-/4">Đăng ký nhận báo giá </a></li>
+                    <li className={gioithieu?'active':''}><a 
+                    onClick={event=>this.toggleMenu(event,'gioithieu')}>Giới thiệu</a></li>
+                    <li className={dangky?'active':''}><a 
+                    onClick={event=>this.toggleMenu(event,'dangky')}
+                    >Đăng ký nhận báo giá </a></li>
                     <div className="clear" />
                   </ul>
                   <div className="clear" />

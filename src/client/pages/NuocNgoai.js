@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchPosts } from "../../databases/logicCode"
 import CardPost from '../../components/CardPost';
+import renderHTML from 'react-render-html';
 class NuocNgoai extends Component {
     constructor(props) {
         super(props);
@@ -23,12 +24,12 @@ class NuocNgoai extends Component {
         const {posts}=this.state;
         return posts.map((val,index)=>(
             <CardPost key={index}
-            title={val.title}
-            intro={val.intro}
-            image={val.image}
+            title={val.tieude}
+            intro={renderHTML(`${val.noidung}`)}
+            image={val.logo}
             to={val.to}
             from={val.from}
-            where={val.where}
+            where={val.diadiem}
             paramLink={val}
             />
         ))

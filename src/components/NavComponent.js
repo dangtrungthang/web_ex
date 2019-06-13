@@ -1,48 +1,85 @@
 import React, { Component } from 'react';
-import {Link,Route,Router } from "react-router-dom";
+import { Link} from "react-router-dom";
 
-
+const menu = {
+  trangchu: false,
+  gioithieu: false,
+  trienlam: false,
+  lich: false,
+  dichvu: false,
+  lienhe: false
+}
 class NavComponent extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      navSelected:'home'
+    this.state = {
+      navSelected: 'home',
+      ...menu,
+      trangchu: true
     }
   }
-  
+
+  toggleMenu = (event, type) => {
+    event.stopPropagation();
+
+    this.setState({
+      ...menu,
+      [type]: true
+    });
+  }
+
   render() {
-   const {navSelected}=this.state;
+    const { trangchu, gioithieu, trienlam, lich, dichvu, lienhe } = this.state;
     return (
       <div classname="App">
         <div className="nav wrapper">
           <div className="menu" id="mainmenu">
             <ul className="menuc">
-              <li ClassName="actived"><Link to="/">Trang chủ</Link></li>
+              <li className={trangchu ? 'active' : ''}><Link
+                onClick={event => this.toggleMenu(event, 'trangchu')}
+                to="/">Trang chủ</Link></li>
               <li className="gach"><a /></li>
-              <li className style={{ zIndex: 100 }}><Link to="/gioi-thieu" style={{ paddingRight: 15 }}>Giới thiệu</Link>
+              <li className={gioithieu ? 'active' : ''} style={{ zIndex: 100 }}><Link to="/gioi-thieu"
+                onClick={event => this.toggleMenu(event, 'gioithieu')}
+                style={{ paddingRight: 15 }}>Giới thiệu</Link>
               </li>
               <li className="gach"><a /></li>
-              
-              <li className style={{ zIndex: 99 }}><a href="/trien-lam" style={{ paddingRight: 15 }} className>Danh sách triễn lãm</a>
+
+              <li className={trienlam?'active':''} style={{ zIndex: 99 }}><Link to="/trien-lam" style={{ paddingRight: 15 }}
+               
+                onClick={event => this.toggleMenu(event, 'trienlam')}
+              >Danh sách triễn lãm</Link>
                 <ul className="sub-menu" style={{ top: 53, visibility: 'visible', display: 'none', left: 0, width: 240 }}>
-                  <li><Link to="/trien-lam" >Trong nước</Link></li>
-                  <li><Link to="/trien-lam/nuoc-ngoai" >Nước ngoài</Link></li>
-                  
+                  <li><Link 
+                    onClick={event => this.toggleMenu(event, 'trienlam')}
+                  to="/trien-lam" >Trong nước</Link></li>
+                  <li><Link 
+                    onClick={event => this.toggleMenu(event, 'trienlam')}
+                  to="/trien-lam/nuoc-ngoai" >Nước ngoài</Link></li>
+
                 </ul>
               </li>
               <li className="gach"><a /></li>
-              <li className style={{ zIndex: 98 }}><a href="/vn/tham-quan-trien-lam" style={{ paddingRight: 15 }} className>Lịch triễn lãm</a>
-                
+              <li className={lich?'active':''} style={{ zIndex: 98 }}><Link to='/lich' 
+              onClick={event=>{this.toggleMenu(event,'lich')}}
+              style={{ paddingRight: 15 }} className>Lịch triễn lãm</Link>
+
               </li>
               <li className="gach"><a /></li>
-              <li className style={{ zIndex: 97 }}><a href="/dich-vu" style={{ paddingRight: 15 }}>Sản phẩm & dịch vụ</a>
+              <li className={dichvu?'active':''} style={{ zIndex: 97 }}><Link to="/dich-vu"
+                style={{ paddingRight: 15 }}
+                onClick={event=>this.toggleMenu(event,'dichvu')}
+              >Sản phẩm & dịch vụ</Link>
                 <ul className="sub-menu" style={{ top: 53, display: 'none', visibility: 'visible' }}>
-                  <li className><a href="/dich-vu/in-the">Dịch vụ in thẻ</a></li>
-                  
+                  <li className><Link 
+                    onClick={event=>this.toggleMenu(event,'dichvu')}
+                  to="/dich-vu/in-the">Dịch vụ in thẻ</Link></li>
+
                 </ul>
               </li>
               <li className="gach"><a /></li>
-              <li className><a href="/lien-he">Liên hệ</a></li>
+              <li className={lienhe?'active':''}
+              onClick={event=>this.toggleMenu(event,'lienhe')}><Link to="/lien-he">Liên hệ</Link></li>
               <div className="clear" />
             </ul>
             <div className="clear" />

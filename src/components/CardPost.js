@@ -30,7 +30,7 @@ class CardPost extends Component {
                             </a>
                         </div>
                         <div className="catItemBody">
-                            <div className="catItemIntroText">
+                            <div className="catItemIntroText" style={{whiteSpace:"nowrap",overflow:"hidden",textOverflow:'ellipsis',maxHeight:100}}>
                                 {this.props.intro}
                             </div>
                         </div>

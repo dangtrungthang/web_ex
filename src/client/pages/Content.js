@@ -4,8 +4,8 @@ import renderHTML from 'react-render-html';
 import { Route, Switch,Link } from 'react-router-dom';
 import FormDisplay from '../../components/FormDisplay';
 import FormVisit from '../../components/FormVisit';
-
-
+import { connect } from "react-redux";
+import * as actions from '../../redux/actions/index';
 const navItem = {
     thongtin: false,
     sodo: false,
@@ -29,6 +29,7 @@ class Content extends Component {
             ...navItem,
             [type]: true
         });
+        this.props.getPostId(this.props.match.params.id);
     };
     
     componentDidMount() {
@@ -39,6 +40,7 @@ class Content extends Component {
         });
 
     }
+    
     render() {
 
         const { post, thongtin, hinhanh, sodo, sanpham, thamquan } = this.state;
@@ -71,7 +73,7 @@ class Content extends Component {
                     <div className="content-left">
                         <Switch>
                             <Route exact path={this.props.match.url+"/thong-tin"} component={() => (
-                                renderHTML(`${post.content}`)
+                                renderHTML(`${post.noidung}`)
                             )} />
                             <Route path={this.props.match.url+'/hinh-anh'} component={() => (
                                 <div>
@@ -107,5 +109,11 @@ class Content extends Component {
         );
     }
 }
-
-export default Content;
+const mapDispatchToProps = (dispatch) => {
+    return {
+     getPostId:(id)=>{
+         dispatch(actions.get_post_id(id));
+     }
+    }
+  }
+export default connect(null,mapDispatchToProps)(Content)
