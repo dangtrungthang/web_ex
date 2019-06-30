@@ -7,7 +7,7 @@ a:hover{text-decoration:none;color:#fbbd16}
 .clear {clear: both;display: block;overflow: hidden;visibility: hidden; width: 0;height: 0;}
 ol,ul{padding:0px;margin:0px;list-style:none}
 /* header*/
-.header{background:url(/images/head.png) #fff no-repeat right;position: relative;}
+.header{background:url(/public/images/backgroud.jpg) #fff no-repeat right;position: relative;}
 .lefthead{float:left;width:40%}
 .righthead{float:right;width:60%;text-align:right}
 .righthead .flag{padding:10px 10px 0px 0px; float: right;}

@@ -62,7 +62,7 @@ class NavComponent extends Component {
               <li className="gach"><a /></li>
               <li className={lich?'active':''} style={{ zIndex: 98 }}><Link to='/lich' 
               onClick={event=>{this.toggleMenu(event,'lich')}}
-              style={{ paddingRight: 15 }} className>Lịch triễn lãm</Link>
+              style={{ paddingRight: 15 }} >Lịch triễn lãm</Link>
 
               </li>
               <li className="gach"><a /></li>

@@ -11,6 +11,7 @@ import NavComponent from '../components/NavComponent';
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
 import WidgetFooter from '../components/WidgetFooter';
+import LichTrienLam from "../client/pages/LichTrienLam";
 
 
  export const Main=()=>(
@@ -24,6 +25,7 @@ import WidgetFooter from '../components/WidgetFooter';
             <Route path="/trien-lam" component={Trienlam}/>
             <Route path="/lien-he" component={Contact}/>
             <Route path="/dich-vu" component={Dichvu}/>
+            <Route path="/lich" component={LichTrienLam}/>
            
         </Switch>
         <WidgetFooter />

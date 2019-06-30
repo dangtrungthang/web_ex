@@ -8,14 +8,14 @@ class About extends Component {
           <h1 className="title"> Giới thiệu</h1>
           <div className="mcon">
             <ul>
-              <li className="active"><a href="/vn/gioi-thieu/gioi-thieu-ve-cong-ty-co-phan-quang-cao-va-xuc-tien-thuong-mai-dong-nam/5">Giới thiệu về công ty Hội chợ Triễn lãm UIT</a></li>
-              <li className><a href="/vn/gioi-thieu/muc-tieu-cua-vietad-/4">Mục tiêu của UIT </a></li>
-              <div className="clear" />
+              {/* <li className="active"><a >Giới thiệu về công ty Hội chợ Triễn lãm UIT</a></li>
+              <li className><a>Mục tiêu của UIT </a></li>
+              <div className="clear" /> */}
             </ul>
             <div className="clear" />
           </div>
           <div className="content-left">
-            <h2 className="tit2">Giới thiệu về công ty</h2>
+            {/* <h2 className="tit2">Giới thiệu về công ty</h2> */}
             <div className="news_detail_content c">
               {/* <div className="slimScrollDiv" style={{ position: 'relative', overflow: 'hidden', width: 'auto', height: 655 }}><div id="doc-content" className="doc-content" style={{ overflow: 'hidden', width: 'auto', height: 655 }}> */}
               Thông tin giới thiệu sẽ được cập nhật sau
