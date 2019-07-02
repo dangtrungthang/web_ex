@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class HeaderComponent extends Component {
     render() {
         return (
-            <div className="header wrapper">
-                <div className="lefthead logo"><h1><a href="/"><img src="/images/vietad2019.png" alt="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" title="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" height="200px" /></a>{/* <br /><a href="/"><img src="/images/logo-vpse.png" alt="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" title="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" style="margin:0 0 15px 10px; height:140px;"></a></h1> */}</h1></div>
+            <div className="header wrapper" style={{}}>
+                <div className="lefthead logo"><h1><a href="/"><img src="/images/trienlam88.png" alt="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" title="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" height="200px" /></a>{/* <br /><a href="/"><img src="/images/logo-vpse.png" alt="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" title="Triễn lãm Quốc tế Thiết bị và Công nghệ Quảng cáo Việt Nam - Lần thứ 10" style="margin:0 0 15px 10px; height:140px;"></a></h1> */}</h1></div>
                 <div className="righthead ">
                     <div className="flag">
                         {/* <a href="/vn/"><img src="/images/viet.png" alt title /></a>

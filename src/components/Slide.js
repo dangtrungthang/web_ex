@@ -7,7 +7,8 @@ import {
     CarouselCaption,
     Button
 } from 'reactstrap';
-
+import {fetchPosts} from '../databases/logicCode';
+import { Link } from "react-router-dom";
 const items = [
     {
         title:'VIETNAM LAS',
@@ -30,7 +31,8 @@ const items = [
 class Slide extends Component {
     constructor(props) {
         super(props);
-        this.state = { activeIndex: 0 };
+        this.state = { activeIndex: 0,
+        posts:[] };
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
         this.goToIndex = this.goToIndex.bind(this);
@@ -63,10 +65,17 @@ class Slide extends Component {
         this.setState({ activeIndex: newIndex });
     }
 
+    componentDidMount(){
+        fetchPosts().then((posts)=>{
+            this.setState({posts})
+        }).catch((error)=>{
+            console.log('Loi fecthPosts'+`${error}`)
+        });
+    }
     render() {
         const { activeIndex } = this.state;
 
-        const slides = items.map((item) => {
+        const slides = this.state.posts.map((item) => {
             return (
                 <CarouselItem
                     onExiting={this.onExiting}
@@ -75,13 +84,16 @@ class Slide extends Component {
                 >
                     <div>
                         <img src='https://png.pngtree.com/thumb_back/fw800/background/20190220/ourmid/pngtree-watercolor-purple-blue-gradient-image_7007.jpg' alt={item.altText} style={{ width: '100%', height: '100%' }} />
-                        <h1  className='text-over-image' style={{  color:'#FF4F4F' }}>{item.title}</h1>
-                        <h4  className='text-over-image' style={{ color:'#56575D',top:'27%' }}>the 13th TPhcm asdasd asdasd asda sd</h4>
-                        <hr className='text-over-image' style={{top:'33%',height:'1px',width:'70%',border:'none',background:'#56575D'}}/>
+                        <h2  className='text-over-image' style={{  color:'#FF4F4F',textAlign:'center' }}>{item.tieude}</h2>
+                        <h4  className='text-over-image' style={{ color:'#56575D',top:'35%' }}>the 13th TPhcm asdasd asdasd asda sd</h4>
+                        <hr className='text-over-image' style={{top:'40%',height:'1px',width:'70%',border:'none',background:'#56575D'}}/>
                         <h2  className='text-over-image' style={{ color:'white',top:'45%' }}>{item.time}</h2>
-                        <h5  className='text-over-image' style={{ color:'#56575D',top:'60%' }}>{item.location}</h5>
+                        <h5  className='text-over-image' style={{ color:'#56575D',top:'60%' }}>{`${item.diadiem},${item.noitochuc}`}</h5>
 
-                        <Button  className='text-over-image' style={{ color:'white',top:'80%' }}>Xem chi tiết</Button>
+                        <Link to={`/trien-lam/nuoc-ngoai/${item.key}/thong-tin`}><Button className='text-over-image' 
+                        style={{ color:'white',top:'80%' }}
+                       
+                        >Xem chi tiết</Button></Link>
 
                     </div>
 
@@ -96,6 +108,7 @@ class Slide extends Component {
                 activeIndex={activeIndex}
                 next={this.next}
                 previous={this.previous}
+                
             >
                 <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                 {slides}

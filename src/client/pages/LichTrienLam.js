@@ -20,9 +20,9 @@ class LichTrienLam extends Component {
         const {posts}=this.state;
         return posts.map((value,index)=>(
           <tr>
-              <td scope='row'>1</td>
+             <td>{`${value.from}-${value.to}`}</td>
               <td>{value.tieude}</td>
-              <td>{`Từ ngày ${value.from} đến ngày ${value.to}`}</td>
+             
               <td>{`${value.diadiem}, ${value.noitochuc}`}</td>
           </tr>  
         ))
@@ -35,13 +35,18 @@ class LichTrienLam extends Component {
                <Table bordered>
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Tên triễn lãm</th>
                             <th>Thời gian</th>
+                            <th>Tên triễn lãm</th>
+                          
                             <th>Địa điểm</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td colSpan='4' className='info-lich'>
+                                <h3>AUGUST, 2019</h3>
+                            </td>
+                        </tr>
                         {this.renderData()}
                     </tbody>
                 </Table>
