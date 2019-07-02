@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import renderHTML from 'react-render-html';
 class CardPost extends Component {
     render() {
         return (
@@ -31,7 +32,7 @@ class CardPost extends Component {
                         </div>
                         <div className="catItemBody">
                             <div className="catItemIntroText" style={{whiteSpace:"nowrap",overflow:"hidden",textOverflow:'ellipsis',maxHeight:100}}>
-                                {this.props.intro}
+                                {/* {renderHTML(this.props.intro)} */}
                             </div>
                         </div>
                     </div>

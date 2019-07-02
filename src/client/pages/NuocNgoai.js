@@ -22,7 +22,10 @@ class NuocNgoai extends Component {
     }
     renderPosts(){
         const {posts}=this.state;
-        return posts.map((val,index)=>(
+        const data=posts.filter((val)=>{
+           return val.phamvi==="Nước ngoài"
+        })
+        return data.map((val,index)=>(
             <CardPost key={index}
             title={val.tieude}
             intro={renderHTML(`${val.noidung}`)}

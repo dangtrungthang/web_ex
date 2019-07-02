@@ -39,11 +39,11 @@ renderPosts(){
   const {posts,hcm,hanoi,khac}=this.state;
   const data=posts.filter((val)=>{
       if(hcm){
-          return val.noitochuc==='TP Hồ Chí Minh';
+          return val.noitochuc==='TP Hồ Chí Minh'&&val.phamvi==="Trong nước";
       }if(hanoi){
-          return val.noitochuc==='Hà Nội'
+          return val.noitochuc==='Hà Nội'&&val.phamvi==="Trong nước"
       }if(khac) {
-        return val.noitochuc!='TP Hồ Chí Minh'&&val.noitochuc!='Hà Nội'
+        return val.noitochuc!='TP Hồ Chí Minh'&&val.noitochuc!='Hà Nội'&&val.phamvi==="Trong nước"
       }
   })
   return data.map((val,index)=>(

@@ -17,7 +17,8 @@ export const fetchPosts=()=> new Promise((resolve,reject)=>{
                 sanpham:doc.val().sanpham,
                 tentrienlam:doc.val().tentrienlam,
                 tieude:doc.val().tieude,
-                noitochuc:doc.val().noitochuc
+                noitochuc:doc.val().noitochuc,
+                phamvi:doc.val().phamvi
             })
         })
         resolve(data);
