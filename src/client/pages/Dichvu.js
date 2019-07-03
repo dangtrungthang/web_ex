@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
-
-const menu={
-  gioithieu:false,
-  dangky:false
+import { BrowserRouter as Switch, Link, Route, Redirect, withRouter } from 'react-router-dom'
+import renderHTML from 'react-render-html';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {database} from '../../databases/firebase';
+const menu = {
+  gioithieu: false,
+  dangky: false
 }
 class Dichvu extends Component {
   constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       ...menu,
-      gioithieu:true
+      gioithieu: true,
+      hoten:'',
+      sdt:'',
+      email:'',
+      tencty:'',
+      fax:'',
+      diachi:''
     }
   }
-  
-  toggleMenu=(event,type)=>{
+
+  toggleMenu = (event, type) => {
     event.stopPropagation();
 
     this.setState({
@@ -21,27 +30,42 @@ class Dichvu extends Component {
       [type]: true
     });
   }
-    render() {
-      const {gioithieu,dangky}=this.state;
+  submit(){
+    const data={
+      hoten:this.state.hoten,
+      tencty:this.state.tencty,
+      sdt:this.state.sdt,
+      email:this.state.email,
+      fax:this.state.fax,
+      diachi:this.state.diachi
+    }
+    this.setState({
+      hoten:'',
+      sdt:'',
+      email:'',
+      tencty:'',
+      fax:'',
+      diachi:''
+    })
+    database.child('/baogiadichvu').push(data).then(()=>{
+      alert('Gửi thành công');
+    }).catch(()=>{
+      alert('Có lỗi xảy ra vui lòng thử lại')
+    })
+  }
+  renderContent() {
+    switch (this.state.gioithieu) {
+      case true:
         return (
-            <div className="main wrapper">
-            <div className="container">
-                <h1 className="title"> Dịch vụ in thẻ</h1>
-                <div className="mcon">
-                  <ul>
-                    <li className={gioithieu?'active':''}><a 
-                    onClick={event=>this.toggleMenu(event,'gioithieu')}>Giới thiệu</a></li>
-                    <li className={dangky?'active':''}><a 
-                    onClick={event=>this.toggleMenu(event,'dangky')}
-                    >Đăng ký nhận báo giá </a></li>
-                    <div className="clear" />
-                  </ul>
-                  <div className="clear" />
-                </div>
-                <div className="content-left">
-                  {/* <h2 className="tit2">Đăng ký nhận báo giá</h2> */}
-                  <div className="news_detail_content c">
-                  <div id="jsn-breadcrumbs">
+          <div>
+            {renderHTML(`<div class="main wrapper">
+<div class="container">
+<div class="mcon">
+<p>&nbsp;</p>
+</div>
+<div class="content-left">
+<div class="news_detail_content c">
+<div id="jsn-breadcrumbs">
 <div id="jsn-pos-breadcrumbs" class="">
 <p>&nbsp;</p>
 </div>
@@ -80,21 +104,105 @@ class Dichvu extends Component {
 </div>
 </div>
 </div>
-                  </div>
-                  <div className="clear" />
-                </div>
-                <div className="content-right">
-                  <div className="btuong">
-                    <div className="clear" />
-                  </div>
-                  <div className="clear" />			</div>
-                <div className="clear" />
-              </div>
-      
-            </div>
-        
-        );
+</div>
+<div class="clear">&nbsp;</div>
+</div>
+<div class="content-right">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+</div>
+</div>
+<div class="footer-widget wrapper">
+<div class="row">
+<div class="cot1">
+<h2>&nbsp;</h2>
+</div>
+</div>
+</div>`)}
+          </div>
+        )
+        break;
+      case false:
+        return(
+          <Form>
+            <FormGroup>
+              <Label>Họ và tên</Label>
+              <Input type="text" value={this.state.title} onChange={e => {
+                        this.setState({ hoten: e.target.value });
+                    }}></Input>
+            </FormGroup>
+            <FormGroup>
+              <Label>Tên công ty & tổ chức</Label>
+              <Input type="text" value={this.state.title} onChange={e => {
+                        this.setState({ tencty: e.target.value });
+                    }}></Input>
+            </FormGroup>
+            <FormGroup>
+              <Label>Địa chỉ</Label>
+              <Input type="text" value={this.state.title} onChange={e => {
+                        this.setState({ diachi: e.target.value });
+                    }}></Input>
+            </FormGroup>
+            <FormGroup>
+              <Label>Số điện thoại</Label>
+              <Input type="text" value={this.state.title} onChange={e => {
+                        this.setState({ sdt: e.target.value });
+                    }}></Input>
+            </FormGroup>
+            <FormGroup>
+              <Label>Fax</Label>
+              <Input type="text" value={this.state.title} onChange={e => {
+                        this.setState({ fax: e.target.value });
+                    }}></Input>
+            </FormGroup>
+            <FormGroup>
+              <Label>Email</Label>
+              <Input type="text" value={this.state.title} onChange={e => {
+                        this.setState({ email: e.target.value });
+                    }}></Input>
+            </FormGroup>
+            <Button onClick={()=>this.submit()}>Gửi</Button>
+          </Form>
+        )
+      default:
+        break;
     }
+  }
+  render() {
+    const { gioithieu, dangky } = this.state;
+    return (
+      <div className="main wrapper">
+        <div className="container">
+          <h1 className="title"> Dịch vụ in thẻ</h1>
+          <div className="mcon">
+            <ul>
+              <li className={gioithieu ? 'active' : ''}><a
+                onClick={event => this.toggleMenu(event, 'gioithieu')}><Link>Giới thiệu</Link></a></li>
+              <li className={dangky ? 'active' : ''}><a
+                onClick={event => this.toggleMenu(event, 'dangky')}
+              >Đăng ký nhận báo giá </a></li>
+              <div className="clear" />
+            </ul>
+            <div className="clear" />
+          </div>
+          <div className="content-left">
+            {/* <h2 className="tit2">Đăng ký nhận báo giá</h2> */}
+            <div className="news_detail_content c">
+              {this.renderContent()}
+            </div>
+            <div className="clear" />
+          </div>
+          <div className="content-right">
+            <div className="btuong">
+              <div className="clear" />
+            </div>
+            <div className="clear" />			</div>
+          <div className="clear" />
+        </div>
+
+      </div>
+
+    );
+  }
 }
 
 export default Dichvu;

@@ -33,7 +33,7 @@ class LichTrienLam extends Component {
                <div className='container'>
                <h1 className="title"> Lịch triễn lãm</h1>
                <Table bordered>
-                    <thead>
+                    <thead> 
                         <tr>
                             <th>Thời gian</th>
                             <th>Tên triễn lãm</th>

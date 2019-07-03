@@ -82,7 +82,7 @@ class Content extends Component {
                             )} />
                             <Route path={this.props.match.url+'/so-do'} component={() => (
                                 <div>
-                                   So do
+                                   <img src={post.sodo}></img>
                                 </div>
                             )} />
                             <Route path={this.props.match.url+'/dang-ky-trung-bay'} component={() => (
