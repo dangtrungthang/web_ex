@@ -12,9 +12,9 @@ class Home extends Component {
                             <img src="/images/0.0527900015578873170db859bc9f797a272368.jpg" alt title />
                         </div>
                         <div className="btuong">
-                            <div className="cothome"><a href="/vn/dang-ki-tham-quan-online"> <img src="/images/h1.png" alt title /></a><br /> <div className="titbtuong"><a href="/vn/dang-ki-tham-quan-online"> ĐĂNG KÝ NHẬN EMAIL</a></div></div>
+                            <div className="cothome"><a href="/lien-he"> <img src="/images/h1.png" alt title /></a><br /> <div className="titbtuong"><a href="/lien-he"> THÔNG TIN LIÊN HỆ</a></div></div>
                             <div className="line" />
-                            <div className="cothome"><a href="/vn/dang-ky-gian-hang-online"><img src="/images/h2.png" alt title /></a><br /> <div className="titbtuong"><a href="/vn/dang-ky-gian-hang-online"> DỊCH VỤ IN THẺ</a></div></div>
+                            <div className="cothome"><a href="/dich-vu/in-the"><img src="/images/h2.png" alt title /></a><br /> <div className="titbtuong"><a href="/dich-vu/in-the"> DỊCH VỤ IN THẺ</a></div></div>
                             <div className="line" />
                             <div className="cothome"><a href="/vn/tham-gia-trien-lam/brochure/1"><img src="/images/h3.png" alt title /></a><br /> <div className="titbtuong"><a href="/vn/tham-gia-trien-lam/brochure/1"> DOWNLOAD</a></div></div>
                             <div className="clear" />

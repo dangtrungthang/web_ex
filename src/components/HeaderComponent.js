@@ -12,14 +12,14 @@ class HeaderComponent extends Component {
                         <a href="/cn/"><img src="/images/trung.png" alt title /></a> */}
                         {/*<a href="/kr/"><img src="/images/han.png" alt="" title="" ></a>*/}
                     </div>
-                    <div className="search">
+                    {/* <div className="search">
                         <form method="get" action="/" id="searchbox">
                             <input type="hidden" name="module" defaultValue="tim-kiem" />
                             <input name="key" type="text" defaultValue="Tìm kiếm ..." onblur="if(this.value=='') this.value='Tìm kiếm ...';" onfocus="if(this.value=='Tìm kiếm ...') this.value='';" />
                         </form>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="slogan ">TRIỂN LÃM QUỐC TẾ THIẾT BỊ &amp; CÔNG NGHỆ QUẢNG CÁO VIỆT NAM LẦN 10 - VIETAD 2019 - TP. HỒ CHÍ MINH
+                <div className="slogan ">WEBSITE TRIỂN LÃM TRONG VÀ NGOÀI NƯỚC {<br/>} MỌI TRIỄN LÃM ĐỀU CÓ MẶT TẠI ĐÂY - Trienlam88
     {/* <p></p> */}</div>
                 <div className="clear" />
             </div>

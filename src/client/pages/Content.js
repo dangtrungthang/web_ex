@@ -40,7 +40,9 @@ class Content extends Component {
         });
 
     }
-    
+    renderImages(){
+      
+    }
     render() {
 
         const { post, thongtin, hinhanh, sodo, sanpham, thamquan } = this.state;
@@ -54,9 +56,9 @@ class Content extends Component {
                             <li className={thongtin ? 'active' : ''}
                                 onClick={event => this.toggleMenu(event, "thongtin")}>
                                     <Link to={`/trien-lam/nuoc-ngoai/${idPost}/thong-tin`}> Thông tin chi tiết </Link></li>
-                            <li className={hinhanh ? 'active' : ''}
+                            {/* <li className={hinhanh ? 'active' : ''}
                                 onClick={event => this.toggleMenu(event, "hinhanh")}>
-                                    <Link to={`/trien-lam/nuoc-ngoai/${idPost}/hinh-anh`}> Hình ảnh </Link></li>
+                                    <Link to={`/trien-lam/nuoc-ngoai/${idPost}/hinh-anh`}> Hình ảnh </Link></li> */}
                             <li className={sodo ? 'active' : ''}
                                 onClick={event => this.toggleMenu(event, "sodo")}>
                                     <Link to={`/trien-lam/nuoc-ngoai/${idPost}/so-do`}> Sơ đồ triễn lãm </Link></li>
@@ -77,7 +79,7 @@ class Content extends Component {
                             )} />
                             <Route path={this.props.match.url+'/hinh-anh'} component={() => (
                                 <div>
-                                   Hinh anh
+                                   {this.renderImages()}
                                 </div>
                             )} />
                             <Route path={this.props.match.url+'/so-do'} component={() => (

@@ -85,7 +85,7 @@ class Slide extends Component {
                     <div>
                         <img src='https://png.pngtree.com/thumb_back/fw800/background/20190220/ourmid/pngtree-watercolor-purple-blue-gradient-image_7007.jpg' alt={item.altText} style={{ width: '100%', height: '100%' }} />
                         <h2  className='text-over-image' style={{  color:'#FF4F4F',textAlign:'center' }}>{item.tieude}</h2>
-                        <h4  className='text-over-image' style={{ color:'#56575D',top:'35%' }}>the 13th TPhcm asdasd asdasd asda sd</h4>
+                        <h4  className='text-over-image' style={{ color:'#56575D',top:'35%' }}>{`Từ ngày ${item.from} đến ${item.to}`}</h4>
                         <hr className='text-over-image' style={{top:'40%',height:'1px',width:'70%',border:'none',background:'#56575D'}}/>
                         <h2  className='text-over-image' style={{ color:'white',top:'45%' }}>{item.time}</h2>
                         <h5  className='text-over-image' style={{ color:'#56575D',top:'60%' }}>{`${item.diadiem},${item.noitochuc}`}</h5>

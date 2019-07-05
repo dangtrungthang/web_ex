@@ -18,7 +18,11 @@ class LichTrienLam extends Component {
     }
     renderData(){ // render trien lam ra bang
         const {posts}=this.state;
-        return posts.map((value,index)=>(
+        const data=posts.sort(function(a,b){
+            
+            return Number(a.from.slice(1,2))-Number(b.from.slice(1,2))
+        })
+        return data.map((value,index)=>(
           <tr>
              <td>{`${value.from}-${value.to}`}</td>
               <td>{value.tieude}</td>
@@ -42,11 +46,11 @@ class LichTrienLam extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {/* <tr>
                             <td colSpan='4' className='info-lich'>
                                 <h3>AUGUST, 2019</h3>
                             </td>
-                        </tr>
+                        </tr> */}
                         {this.renderData()}
                     </tbody>
                 </Table>
